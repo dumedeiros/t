@@ -1,0 +1,32 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+Hi
+
+<button id="bb">Hellloo </button>
+<button id="st">Strop </button>
+<button id="rs">Resume </button>
+
+<input type="text" id="result"> 
+
+<script>
+
+
+    $('#bb').click(function () {
+        $.get("@{Application.getA()}", function (data) {
+            $("#result").val(data);
+        });
+    })
+    $('#st').click(function () {
+        $.get("@{Application.suspend()}", function () {
+
+        });
+    })
+    $('#rs').click(function () {
+        $.get("@{Application.resume()}", function () {
+
+        });
+    })
+
+
+
+</script>
